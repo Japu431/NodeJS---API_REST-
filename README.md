@@ -1,6 +1,6 @@
 # Instale as Dependências !!
 
-``npm install`
+`npm install`
 
 # Rodar Aplicação...
 
