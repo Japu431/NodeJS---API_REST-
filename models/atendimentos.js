@@ -11,7 +11,7 @@ class Atendimento {
 
     const dataValida = moment(data).isSameOrAfter(dataCriacao);
 
-    const clienteValido = atendimento.Cliente.length >= 5;
+    const clienteValido = atendimento.cliente.length >= 5;
 
     const validacao = [
       {
@@ -41,7 +41,7 @@ class Atendimento {
         if (err) {
           res.status(400).json(err);
         } else {
-          res.status(201).json(result);
+          res.status(201).json(atendimento);
         }
       });
     }
@@ -85,7 +85,7 @@ class Atendimento {
       if (err) {
         res.status(400).json(err);
       } else {
-        res.status(200).json(resultados);
+        res.status(200).json({ ...valores, id });
       }
     });
   }
@@ -97,7 +97,7 @@ class Atendimento {
       if (err) {
         res.status(400).json(err);
       } else {
-        res.status(200).json(resultados);
+        res.status(200).json({ id });
       }
     });
   }
